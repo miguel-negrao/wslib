@@ -3,7 +3,7 @@
 // exclude can be an array of Symbols with extra messages to exclude (i.e. not post)
 
 
-OSCMonitor {
+OSCMonitorWSLIB {
 	
 	classvar <>exclude;
 	
@@ -21,10 +21,10 @@ OSCMonitor {
 + Main {
 	monitorOSC { |bool = true, exclude|
 		if( bool == true ) {
-			OSCMonitor.exclude = exclude;
-			recvOSCfunc = recvOSCfunc.removeFunc( OSCMonitor ).addFunc( OSCMonitor );
+			OSCMonitorWSLIB.exclude = exclude;
+			recvOSCfunc = recvOSCfunc.removeFunc( OSCMonitorWSLIB ).addFunc( OSCMonitorWSLIB );
 		} {
-			recvOSCfunc = recvOSCfunc.removeFunc( OSCMonitor );
+			recvOSCfunc = recvOSCfunc.removeFunc( OSCMonitorWSLIB );
 		};
 	}
 }
